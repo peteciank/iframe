@@ -1,0 +1,609 @@
+<iframe src="https://dashboard.crc-sas.org/informes/como-estamos/" height="850" width="1280">
+#document == $0
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="application/shiny-singletons">b8d79706b067e925accf37c2d5d6cf4524fed520,5e0f88febb86f96c0520e14c578ee14ba67872b6,abbc5191535f7e95ba1254171676097ac26b5edc,93265af5ae8b86889d094456aadbb722300d9aeb,f5e8dfbe0784fdceb59ddb7b69af292ec2a853a0,83a36a923449444452a46b08a1bb1c1827066418</script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[1.12.4];shiny[1.3.2];selectize[0.11.2];htmlwidgets[1.3];leaflet[1.3.1];leafletfix[1.0.0];Proj4Leaflet[1.0.1];rstudio_leaflet[1.3.1];leaflet-binding[2.0.2];proj4js[2.3.15];highcharts[7.0.1];highchart-binding[0.7.0];bootstrap[3.3.7]</script>
+<script src="shared/json2-min.js"></script>
+<script src="shared/jquery.min.js"></script>
+<link href="shared/shiny.css" rel="stylesheet" />
+<script src="shared/shiny.min.js"></script>
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+<script src="shared/selectize/js/es5-shim.min.js"></script>
+<![endif]-->
+<script src="shared/selectize/js/selectize.min.js"></script>
+<script src="htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="leaflet-1.3.1/leaflet.js"></script>
+<link href="leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="proj4js-2.3.15/proj4.js"></script>
+<link href="highcharts-7.0.1/css/motion.css" rel="stylesheet" />
+<link href="highcharts-7.0.1/css/htmlwdgtgrid.css" rel="stylesheet" />
+<script src="highcharts-7.0.1/highcharts.js"></script>
+<script src="highcharts-7.0.1/highcharts-3d.js"></script>
+<script src="highcharts-7.0.1/highcharts-more.js"></script>
+<script src="highcharts-7.0.1/modules/stock.js"></script>
+<script src="highcharts-7.0.1/modules/map.js"></script>
+<script src="highcharts-7.0.1/modules/annotations.js"></script>
+<script src="highcharts-7.0.1/modules/boost.js"></script>
+<script src="highcharts-7.0.1/modules/data.js"></script>
+<script src="highcharts-7.0.1/modules/drag-panes.js"></script>
+<script src="highcharts-7.0.1/modules/drilldown.js"></script>
+<script src="highcharts-7.0.1/modules/item-series.js"></script>
+<script src="highcharts-7.0.1/modules/offline-exporting.js"></script>
+<script src="highcharts-7.0.1/modules/overlapping-datalabels.js"></script>
+<script src="highcharts-7.0.1/modules/exporting.js"></script>
+<script src="highcharts-7.0.1/modules/export-data.js"></script>
+<script src="highcharts-7.0.1/modules/funnel.js"></script>
+<script src="highcharts-7.0.1/modules/heatmap.js"></script>
+<script src="highcharts-7.0.1/modules/treemap.js"></script>
+<script src="highcharts-7.0.1/modules/sankey.js"></script>
+<script src="highcharts-7.0.1/modules/solid-gauge.js"></script>
+<script src="highcharts-7.0.1/modules/streamgraph.js"></script>
+<script src="highcharts-7.0.1/modules/sunburst.js"></script>
+<script src="highcharts-7.0.1/modules/vector.js"></script>
+<script src="highcharts-7.0.1/modules/wordcloud.js"></script>
+<script src="highcharts-7.0.1/modules/xrange.js"></script>
+<script src="highcharts-7.0.1/modules/tilemap.js"></script>
+<script src="highcharts-7.0.1/modules/venn.js"></script>
+<script src="highcharts-7.0.1/modules/gantt.js"></script>
+<script src="highcharts-7.0.1/modules/timeline.js"></script>
+<script src="highcharts-7.0.1/modules/parallel-coordinates.js"></script>
+<script src="highcharts-7.0.1/plugins/grouped-categories.js"></script>
+<script src="highcharts-7.0.1/plugins/motion.js"></script>
+<script src="highcharts-7.0.1/plugins/multicolor_series.js"></script>
+<script src="highcharts-7.0.1/custom/reset.js"></script>
+<script src="highcharts-7.0.1/custom/symbols-extra.js"></script>
+<script src="highcharts-7.0.1/custom/text-symbols.js"></script>
+<script src="highchart-binding-0.7.0/highchart.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="shared/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="shared/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/bootstrap/shim/html5shiv.min.js"></script>
+<script src="shared/bootstrap/shim/respond.min.js"></script>  <style>.shinyjs-hide { display: none !important; }</style>
+  <script>Shiny.addCustomMessageHandler('shinyjs-show', function(params) { shinyjs.debugMessage('shinyjs: calling function "show" with parameters:'); shinyjs.debugMessage(params); shinyjs.show(params);});
+Shiny.addCustomMessageHandler('shinyjs-hide', function(params) { shinyjs.debugMessage('shinyjs: calling function "hide" with parameters:'); shinyjs.debugMessage(params); shinyjs.hide(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggle', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggle" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggle(params);});
+Shiny.addCustomMessageHandler('shinyjs-enable', function(params) { shinyjs.debugMessage('shinyjs: calling function "enable" with parameters:'); shinyjs.debugMessage(params); shinyjs.enable(params);});
+Shiny.addCustomMessageHandler('shinyjs-disable', function(params) { shinyjs.debugMessage('shinyjs: calling function "disable" with parameters:'); shinyjs.debugMessage(params); shinyjs.disable(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggleState', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggleState" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggleState(params);});
+Shiny.addCustomMessageHandler('shinyjs-addClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "addClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.addClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-removeClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "removeClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.removeClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggleClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggleClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggleClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-html', function(params) { shinyjs.debugMessage('shinyjs: calling function "html" with parameters:'); shinyjs.debugMessage(params); shinyjs.html(params);});
+Shiny.addCustomMessageHandler('shinyjs-onevent', function(params) { shinyjs.debugMessage('shinyjs: calling function "onevent" with parameters:'); shinyjs.debugMessage(params); shinyjs.onevent(params);});
+Shiny.addCustomMessageHandler('shinyjs-alert', function(params) { shinyjs.debugMessage('shinyjs: calling function "alert" with parameters:'); shinyjs.debugMessage(params); shinyjs.alert(params);});
+Shiny.addCustomMessageHandler('shinyjs-logjs', function(params) { shinyjs.debugMessage('shinyjs: calling function "logjs" with parameters:'); shinyjs.debugMessage(params); shinyjs.logjs(params);});
+Shiny.addCustomMessageHandler('shinyjs-runjs', function(params) { shinyjs.debugMessage('shinyjs: calling function "runjs" with parameters:'); shinyjs.debugMessage(params); shinyjs.runjs(params);});
+Shiny.addCustomMessageHandler('shinyjs-reset', function(params) { shinyjs.debugMessage('shinyjs: calling function "reset" with parameters:'); shinyjs.debugMessage(params); shinyjs.reset(params);});
+Shiny.addCustomMessageHandler('shinyjs-delay', function(params) { shinyjs.debugMessage('shinyjs: calling function "delay" with parameters:'); shinyjs.debugMessage(params); shinyjs.delay(params);});
+Shiny.addCustomMessageHandler('shinyjs-click', function(params) { shinyjs.debugMessage('shinyjs: calling function "click" with parameters:'); shinyjs.debugMessage(params); shinyjs.click(params);});</script>
+  <script src="shinyjs/shinyjs-default-funcs.js"></script>
+  <script>shinyjs.debug = false;</script>
+  <base/>
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+  <script type="text/javascript" src="leaflet-side-by-side.js"></script>
+  <script type="text/javascript" src="custom.js"></script>
+  <style>.shiny-notification {position: fixed; top: 50%; left: 50% }</style>
+  <link rel="stylesheet" href="assets/spinner.css"/>
+  <link rel="stylesheet" href="css-loaders/css/fallback.css"/>
+  <link rel="stylesheet" href="css-loaders/css/load7.css"/>
+  <style>#spinner-c04b7c81dc5e30c122ccc92160f00963 {color: #008d4c}</style>
+  <style>#spinner-c04b7c81dc5e30c122ccc92160f00963 {font-size: 2px}spinner-c04b7c81dc5e30c122ccc92160f009632</style>
+  <style>#spinner-f27f204b31d31503bd5d50748f590756 {color: #008d4c}</style>
+  <style>#spinner-f27f204b31d31503bd5d50748f590756 {font-size: 2px}spinner-f27f204b31d31503bd5d50748f5907562</style>
+  <style>#spinner-69a4cee2567dbfcc45cd5ba9e9b5ea3d {color: #008d4c}</style>
+  <style>#spinner-69a4cee2567dbfcc45cd5ba9e9b5ea3d {font-size: 2px}spinner-69a4cee2567dbfcc45cd5ba9e9b5ea3d2</style>
+  <style>#spinner-87bf901103fb6dd8d25a098bee8c5c93 {color: #008d4c}</style>
+  <style>#spinner-87bf901103fb6dd8d25a098bee8c5c93 {font-size: 2px}spinner-87bf901103fb6dd8d25a098bee8c5c932</style>
+  <style>#spinner-dcbc41a298b1ff9ea005211f4e63decf {color: #008d4c}</style>
+  <style>#spinner-dcbc41a298b1ff9ea005211f4e63decf {font-size: 2px}spinner-dcbc41a298b1ff9ea005211f4e63decf2</style>
+  <link rel="stylesheet" href="css-loaders/css/load5.css"/>
+  <style>#spinner-6b8d2eb81d9736609309420359a73c1a {   margin: 100px auto;   font-size: 25px;   width: 1em;   height: 1em;   border-radius: 50%;   position: relative;   text-indent: -9999em;   -webkit-animation: load5-spinner-6b8d2eb81d9736609309420359a73c1a 1.1s infinite ease;   animation: load5-spinner-6b8d2eb81d9736609309420359a73c1a 1.1s infinite ease;   -webkit-transform: translateZ(0);   -ms-transform: translateZ(0);   transform: translateZ(0); } @-webkit-keyframes load5-spinner-6b8d2eb81d9736609309420359a73c1a {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } } @keyframes load5-spinner-6b8d2eb81d9736609309420359a73c1a {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } }</style>
+  <style>#spinner-6b8d2eb81d9736609309420359a73c1a {font-size: 19px}spinner-6b8d2eb81d9736609309420359a73c1a19</style>
+  <style>#spinner-a31273591a93385d65c9a9bd93767188 {   margin: 100px auto;   font-size: 25px;   width: 1em;   height: 1em;   border-radius: 50%;   position: relative;   text-indent: -9999em;   -webkit-animation: load5-spinner-a31273591a93385d65c9a9bd93767188 1.1s infinite ease;   animation: load5-spinner-a31273591a93385d65c9a9bd93767188 1.1s infinite ease;   -webkit-transform: translateZ(0);   -ms-transform: translateZ(0);   transform: translateZ(0); } @-webkit-keyframes load5-spinner-a31273591a93385d65c9a9bd93767188 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } } @keyframes load5-spinner-a31273591a93385d65c9a9bd93767188 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } }</style>
+  <style>#spinner-a31273591a93385d65c9a9bd93767188 {font-size: 19px}spinner-a31273591a93385d65c9a9bd9376718819</style>
+  <style>#spinner-064d509f23a68b315280e72d8ff775ce {   margin: 100px auto;   font-size: 25px;   width: 1em;   height: 1em;   border-radius: 50%;   position: relative;   text-indent: -9999em;   -webkit-animation: load5-spinner-064d509f23a68b315280e72d8ff775ce 1.1s infinite ease;   animation: load5-spinner-064d509f23a68b315280e72d8ff775ce 1.1s infinite ease;   -webkit-transform: translateZ(0);   -ms-transform: translateZ(0);   transform: translateZ(0); } @-webkit-keyframes load5-spinner-064d509f23a68b315280e72d8ff775ce {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } } @keyframes load5-spinner-064d509f23a68b315280e72d8ff775ce {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } }</style>
+  <style>#spinner-064d509f23a68b315280e72d8ff775ce {font-size: 19px}spinner-064d509f23a68b315280e72d8ff775ce19</style>
+  <style>#spinner-f5ab7261c6764543269204f61632ec56 {   margin: 100px auto;   font-size: 25px;   width: 1em;   height: 1em;   border-radius: 50%;   position: relative;   text-indent: -9999em;   -webkit-animation: load5-spinner-f5ab7261c6764543269204f61632ec56 1.1s infinite ease;   animation: load5-spinner-f5ab7261c6764543269204f61632ec56 1.1s infinite ease;   -webkit-transform: translateZ(0);   -ms-transform: translateZ(0);   transform: translateZ(0); } @-webkit-keyframes load5-spinner-f5ab7261c6764543269204f61632ec56 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } } @keyframes load5-spinner-f5ab7261c6764543269204f61632ec56 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } }</style>
+  <style>#spinner-f5ab7261c6764543269204f61632ec56 {font-size: 19px}spinner-f5ab7261c6764543269204f61632ec5619</style>
+  <style>#spinner-124996748e79404c1472c08993cd7a25 {   margin: 100px auto;   font-size: 25px;   width: 1em;   height: 1em;   border-radius: 50%;   position: relative;   text-indent: -9999em;   -webkit-animation: load5-spinner-124996748e79404c1472c08993cd7a25 1.1s infinite ease;   animation: load5-spinner-124996748e79404c1472c08993cd7a25 1.1s infinite ease;   -webkit-transform: translateZ(0);   -ms-transform: translateZ(0);   transform: translateZ(0); } @-webkit-keyframes load5-spinner-124996748e79404c1472c08993cd7a25 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } } @keyframes load5-spinner-124996748e79404c1472c08993cd7a25 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } }</style>
+  <style>#spinner-124996748e79404c1472c08993cd7a25 {font-size: 19px}spinner-124996748e79404c1472c08993cd7a2519</style>
+  <style>#spinner-e441b723db70d693419142acc917e9f5 {   margin: 100px auto;   font-size: 25px;   width: 1em;   height: 1em;   border-radius: 50%;   position: relative;   text-indent: -9999em;   -webkit-animation: load5-spinner-e441b723db70d693419142acc917e9f5 1.1s infinite ease;   animation: load5-spinner-e441b723db70d693419142acc917e9f5 1.1s infinite ease;   -webkit-transform: translateZ(0);   -ms-transform: translateZ(0);   transform: translateZ(0); } @-webkit-keyframes load5-spinner-e441b723db70d693419142acc917e9f5 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } } @keyframes load5-spinner-e441b723db70d693419142acc917e9f5 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } }</style>
+  <style>#spinner-e441b723db70d693419142acc917e9f5 {font-size: 19px}spinner-e441b723db70d693419142acc917e9f519</style>
+  <style>#spinner-08e8cfa568491707be2cf936d8720aae {   margin: 100px auto;   font-size: 25px;   width: 1em;   height: 1em;   border-radius: 50%;   position: relative;   text-indent: -9999em;   -webkit-animation: load5-spinner-08e8cfa568491707be2cf936d8720aae 1.1s infinite ease;   animation: load5-spinner-08e8cfa568491707be2cf936d8720aae 1.1s infinite ease;   -webkit-transform: translateZ(0);   -ms-transform: translateZ(0);   transform: translateZ(0); } @-webkit-keyframes load5-spinner-08e8cfa568491707be2cf936d8720aae {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } } @keyframes load5-spinner-08e8cfa568491707be2cf936d8720aae {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } }</style>
+  <style>#spinner-08e8cfa568491707be2cf936d8720aae {font-size: 19px}spinner-08e8cfa568491707be2cf936d8720aae19</style>
+  <style>#spinner-45731a0aee25795a70e37170cbd62fa0 {   margin: 100px auto;   font-size: 25px;   width: 1em;   height: 1em;   border-radius: 50%;   position: relative;   text-indent: -9999em;   -webkit-animation: load5-spinner-45731a0aee25795a70e37170cbd62fa0 1.1s infinite ease;   animation: load5-spinner-45731a0aee25795a70e37170cbd62fa0 1.1s infinite ease;   -webkit-transform: translateZ(0);   -ms-transform: translateZ(0);   transform: translateZ(0); } @-webkit-keyframes load5-spinner-45731a0aee25795a70e37170cbd62fa0 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } } @keyframes load5-spinner-45731a0aee25795a70e37170cbd62fa0 {   0%,   100% {     box-shadow: 0em -2.6em 0em 0em #008d4c, 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.5), -1.8em -1.8em 0 0em rgba(0,141,76, 0.7);   }   12.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.7), 1.8em -1.8em 0 0em #008d4c, 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.5);   }   25% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.5), 1.8em -1.8em 0 0em rgba(0,141,76, 0.7), 2.5em 0em 0 0em #008d4c, 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   37.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.5), 2.5em 0em 0 0em rgba(0,141,76, 0.7), 1.75em 1.75em 0 0em #008d4c, 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   50% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.5), 1.75em 1.75em 0 0em rgba(0,141,76, 0.7), 0em 2.5em 0 0em #008d4c, -1.8em 1.8em 0 0em rgba(0,141,76, 0.2), -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   62.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.5), 0em 2.5em 0 0em rgba(0,141,76, 0.7), -1.8em 1.8em 0 0em #008d4c, -2.6em 0em 0 0em rgba(0,141,76, 0.2), -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   75% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.5), -1.8em 1.8em 0 0em rgba(0,141,76, 0.7), -2.6em 0em 0 0em #008d4c, -1.8em -1.8em 0 0em rgba(0,141,76, 0.2);   }   87.5% {     box-shadow: 0em -2.6em 0em 0em rgba(0,141,76, 0.2), 1.8em -1.8em 0 0em rgba(0,141,76, 0.2), 2.5em 0em 0 0em rgba(0,141,76, 0.2), 1.75em 1.75em 0 0em rgba(0,141,76, 0.2), 0em 2.5em 0 0em rgba(0,141,76, 0.2), -1.8em 1.8em 0 0em rgba(0,141,76, 0.5), -2.6em 0em 0 0em rgba(0,141,76, 0.7), -1.8em -1.8em 0 0em #008d4c;   } }</style>
+  <style>#spinner-45731a0aee25795a70e37170cbd62fa0 {font-size: 19px}spinner-45731a0aee25795a70e37170cbd62fa019</style>
+
+<script src="__assets__/sockjs-0.3.4.min.js"></script>
+<script src="__assets__/shiny-server-client.min.js"></script>
+<script>preShinyInit({reconnect:true,disableProtocols:[]});</script>
+<link rel="stylesheet" type="text/css" href="__assets__/shiny-server.css"/>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <br/>
+    <div class="row">
+      <div class="col-sm-4">
+        <form class="well">
+          <button id="menuAyuda" type="button" class="btn btn-default action-button">
+            <i class="glyphicon glyphicon-info-sign"></i>
+            ¿Qué son estos controles?
+          </button>
+          <br/>
+          <br/>
+          <div data-display-if="((input.solapa == &#39;estacionesEnSequia&#39;) || (input.solapa == &#39;estacionesEnHumedad&#39;))" data-ns-prefix="">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group shiny-input-container">
+                  <label class="control-label" for="indice">Índice:</label>
+                  <div>
+                    <select id="indice"><option value="SPI" selected>SPI</option>
+<option value="SPEI">SPEI</option></select>
+                    <script type="application/json" data-for="indice" data-nonempty="">{}</script>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="form-group shiny-input-container">
+                  <label class="control-label" for="escala">Escala temporal (meses):</label>
+                  <div>
+                    <select id="escala"><option value="1">1</option>
+<option value="2">2</option>
+<option value="3" selected>3</option>
+<option value="6">6</option>
+<option value="9">9</option>
+<option value="12">12</option>
+<option value="18">18</option>
+<option value="24">24</option>
+<option value="36">36</option>
+<option value="48">48</option></select>
+                    <script type="application/json" data-for="escala" data-nonempty="">{}</script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-display-if="(input.solapa == &#39;haceCuantoQueNoLlueve&#39;)" data-ns-prefix="">
+            <script src="assets/spinner.js"></script>
+            <div class="shiny-spinner-output-container">
+              <div class="load-container load7">
+                <div id="spinner-c04b7c81dc5e30c122ccc92160f00963" class="loader">Loading...</div>
+              </div>
+              <div style="height:80px" class="shiny-spinner-placeholder"></div>
+              <div id="uiFechaDiasSecos" class="shiny-html-output"></div>
+            </div>
+            <br/>
+            <div id="umbralLluvia" class="form-group shiny-input-radiogroup shiny-input-container">
+              <label class="control-label" for="umbralLluvia">Indique el monto mínimo de precipitación diaria para que un día se considere lluvioso</label>
+              <div class="shiny-options-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="umbralLluvia" value="0.1" checked="checked"/>
+                    <span>Más de 0.1 mm</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="umbralLluvia" value="1"/>
+                    <span>Más de 1 mm</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="umbralLluvia" value="3"/>
+                    <span>Más de 3 mm</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div id="ui_descargar_mapa_hace_cuanto_que_no_llueve" class="shiny-html-output"></div>
+            <hr/>
+            <h5>
+              <u>Nota:</u>
+               Las estaciones que tienen datos faltantes de precipitación pueden no aparecer en el mapa debido a la imposibilidad de determinar la longitud de las rachas sin lluvia.
+            </h5>
+          </div>
+          <div data-display-if="((input.solapa == &#39;estacionesEnSequia&#39;) || (input.solapa == &#39;estacionesEnHumedad&#39;))" data-ns-prefix="">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="shiny-spinner-output-container">
+                  <div class="load-container load7">
+                    <div id="spinner-f27f204b31d31503bd5d50748f590756" class="loader">Loading...</div>
+                  </div>
+                  <div style="height:80px" class="shiny-spinner-placeholder"></div>
+                  <div id="uiAnoEstacionesSequia" class="shiny-html-output"></div>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="shiny-spinner-output-container">
+                  <div class="load-container load7">
+                    <div id="spinner-69a4cee2567dbfcc45cd5ba9e9b5ea3d" class="loader">Loading...</div>
+                  </div>
+                  <div style="height:80px" class="shiny-spinner-placeholder"></div>
+                  <div id="uiPeriodoEstacionesSequia" class="shiny-html-output"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-display-if="(input.solapa == &#39;estacionesEnSequia&#39;)" data-ns-prefix="">
+            <hr/>
+            <div id="mostrarEstacionesEnSequia" class="form-group shiny-input-radiogroup shiny-input-container">
+              <label class="control-label" for="mostrarEstacionesEnSequia">Mostrar en el mapa las siguientes estaciones:</label>
+              <div class="shiny-options-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="mostrarEstacionesEnSequia" value="estaciones_sequia" checked="checked"/>
+                    <span>Solamente las estaciones en sequía</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="mostrarEstacionesEnSequia" value="estaciones_sin_faltantes"/>
+                    <span>Estaciones sin datos faltantes (en sequía o no)</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="mostrarEstacionesEnSequia" value="todas_estaciones"/>
+                    <span>Todas las estaciones</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div id="ui_descargar_mapa_estaciones_en_sequia" class="shiny-html-output"></div>
+          </div>
+          <div data-display-if="(input.solapa == &#39;estacionesEnHumedad&#39;)" data-ns-prefix="">
+            <hr/>
+            <div id="mostrarEstacionesEnHumedad" class="form-group shiny-input-radiogroup shiny-input-container">
+              <label class="control-label" for="mostrarEstacionesEnHumedad">Mostrar en el mapa las siguientes estaciones:</label>
+              <div class="shiny-options-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="mostrarEstacionesEnHumedad" value="estaciones_humedad" checked="checked"/>
+                    <span>Solamente las estaciones con excesos de humedad</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="mostrarEstacionesEnHumedad" value="estaciones_sin_faltantes"/>
+                    <span>Estaciones sin datos faltantes (con/sin excesos)</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="mostrarEstacionesEnHumedad" value="todas_estaciones"/>
+                    <span>Todas las estaciones</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div id="ui_descargar_mapa_estaciones_en_humedad" class="shiny-html-output"></div>
+          </div>
+          <div data-display-if="(input.solapa == &#39;zonasEnSequia&#39;) || (input.solapa == &#39;zonasHumedad&#39;) || (input.solapa == &#39;proporcionAreaSequia&#39;) || &#10;		      (input.solapa == &#39;comparacionSequias&#39;) || (input.solapa == &#39;evolucionSequias&#39;)" data-ns-prefix="">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group shiny-input-container">
+                  <label class="control-label" for="producto">Producto:</label>
+                  <div>
+                    <select id="producto"><option value="chirps" selected>CHIRPS</option></select>
+                    <script type="application/json" data-for="producto" data-nonempty="">{}</script>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="form-group shiny-input-container">
+                  <label class="control-label" for="escalaCHIRPS">Escala temporal (en meses):</label>
+                  <div>
+                    <select id="escalaCHIRPS"><option value="3" selected>3</option>
+<option value="6">6</option>
+<option value="12">12</option></select>
+                    <script type="application/json" data-for="escalaCHIRPS" data-nonempty="">{}</script>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-display-if="(input.solapa == &#39;comparacionSequias&#39;) || (input.solapa == &#39;evolucionSequias&#39;)" data-ns-prefix="">
+              <hr/>
+              <div id="uiTextoPrimerPeriodo" class="shiny-html-output"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="shiny-spinner-output-container">
+                  <div class="load-container load7">
+                    <div id="spinner-87bf901103fb6dd8d25a098bee8c5c93" class="loader">Loading...</div>
+                  </div>
+                  <div style="height:80px" class="shiny-spinner-placeholder"></div>
+                  <div id="uiAnoInicioCHIRPS" class="shiny-html-output"></div>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="shiny-spinner-output-container">
+                  <div class="load-container load7">
+                    <div id="spinner-dcbc41a298b1ff9ea005211f4e63decf" class="loader">Loading...</div>
+                  </div>
+                  <div style="height:80px" class="shiny-spinner-placeholder"></div>
+                  <div id="uiPeriodoCHIRPS" class="shiny-html-output"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-display-if="(input.solapa == &#39;proporcionAreaSequia&#39;)" data-ns-prefix="">
+            <div id="tipoInformacion" class="form-group shiny-input-radiogroup shiny-input-container shiny-input-container-inline">
+              <label class="control-label" for="tipoInformacion">Visualizar información de:</label>
+              <div class="shiny-options-group">
+                <label class="radio-inline">
+                  <input type="radio" name="tipoInformacion" value="categorias" checked="checked"/>
+                  <span>Categorías de sequía (US Drought Monitor)</span>
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="tipoInformacion" value="deciles"/>
+                  <span>Deciles</span>
+                </label>
+              </div>
+            </div>
+            <hr/>
+          </div>
+          <div data-display-if="((input.solapa == &#39;proporcionAreaSequia&#39;) || (input.solapa == &#39;zonasEnSequia&#39;) || (input.solapa == &#39;zonasHumedad&#39;))" data-ns-prefix="">
+            <div id="zonaGeografica" class="form-group shiny-input-radiogroup shiny-input-container">
+              <label class="control-label" for="zonaGeografica">Acotar región de análisis a:</label>
+              <div class="shiny-options-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="zonaGeografica" value="crc-sas" checked="checked"/>
+                    <span>Todo el CRC-SAS</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="zonaGeografica" value="pais"/>
+                    <span>País</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="zonaGeografica" value="unidad_nivel_1"/>
+                    <span>Unidad administrativa de nivel 1</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="zonaGeografica" value="unidad_nivel_2"/>
+                    <span>Unidad administrativa de nivel 2</span>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="zonaGeografica" value="cuenca"/>
+                    <span>Cuenca hidrográfica</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div data-display-if="(input.zonaGeografica == &quot;cuenca&quot;)" data-ns-prefix="">
+              <div id="uiCuenca" class="shiny-html-output"></div>
+            </div>
+            <div data-display-if="(input.zonaGeografica == &quot;pais&quot;) || (input.zonaGeografica == &quot;unidad_nivel_1&quot;) || (input.zonaGeografica == &quot;unidad_nivel_2&quot;)" data-ns-prefix="">
+              <div id="uiPais" class="shiny-html-output"></div>
+            </div>
+            <div data-display-if="(input.zonaGeografica == &quot;unidad_nivel_1&quot;) || (input.zonaGeografica == &quot;unidad_nivel_2&quot;)" data-ns-prefix="">
+              <div id="uiNivel1" class="shiny-html-output"></div>
+            </div>
+            <div data-display-if="(input.zonaGeografica == &quot;unidad_nivel_2&quot;)" data-ns-prefix="">
+              <div id="uiNivel2" class="shiny-html-output"></div>
+            </div>
+            <div data-display-if="(input.solapa == &#39;zonasEnSequia&#39;)" data-ns-prefix="">
+              <div id="ui_descargar_mapa_zonas_sequia" class="shiny-html-output"></div>
+            </div>
+            <div data-display-if="(input.solapa == &#39;zonasHumedad&#39;)" data-ns-prefix="">
+              <div id="ui_descargar_mapa_zonas_humedad" class="shiny-html-output"></div>
+            </div>
+            <hr/>
+            <h5>
+              <u>Advertencia:</u>
+            </h5>
+            <h5>1. El área considerada en el cálculo para Brasil, corresponde a aquella ubicada al sur de 10°S</h5>
+            <h5>2. El área considerada en el cálculo para Argentina y Chile, corresponde a aquella ubicada al norte de 46°S</h5>
+          </div>
+          <div data-display-if="(input.solapa == &#39;comparacionSequias&#39;) || (input.solapa == &#39;evolucionSequias&#39;)" data-ns-prefix="">
+            <hr/>
+            <div id="uiPeriodoComparacion" class="shiny-html-output"></div>
+            <div data-display-if="((typeof input.periodoComparacion == &#39;undefined&#39;) || (input.periodoComparacion == &#39;otro&#39;))" data-ns-prefix="">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div id="uiAnoInicioComparacion" class="shiny-html-output"></div>
+                </div>
+                <div class="col-sm-8">
+                  <div id="uiFechaComparacion" class="shiny-html-output"></div>
+                </div>
+              </div>
+            </div>
+            <div data-display-if="(input.solapa == &#39;comparacionSequias&#39;)" data-ns-prefix="">
+              <div id="ui_descargar_mapa_comparacion_sequias" class="shiny-html-output"></div>
+            </div>
+            <div data-display-if="(input.solapa == &#39;evolucionSequias&#39;)" data-ns-prefix="">
+              <div id="ui_descargar_mapa_evolucion_sequias" class="shiny-html-output"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-8">
+        <div class="tabbable">
+          <ul class="nav nav-tabs shiny-tab-input" id="solapa" data-tabsetid="6870">
+            <li class="active">
+              <a href="#tab-6870-1" data-toggle="tab" data-value="haceCuantoQueNoLlueve">¿Hace cuánto que no llueve?</a>
+            </li>
+            <li>
+              <a href="#tab-6870-2" data-toggle="tab" data-value="estacionesEnSequia">¿Qué estaciones están en sequía?</a>
+            </li>
+            <li>
+              <a href="#tab-6870-3" data-toggle="tab" data-value="estacionesEnHumedad">¿En qué estaciones llovió mucho?</a>
+            </li>
+            <li>
+              <a href="#tab-6870-4" data-toggle="tab" data-value="zonasEnSequia">¿Qué zonas están en sequía?</a>
+            </li>
+            <li>
+              <a href="#tab-6870-5" data-toggle="tab" data-value="zonasHumedad">¿En qué zonas llovió mucho?</a>
+            </li>
+            <li>
+              <a href="#tab-6870-6" data-toggle="tab" data-value="proporcionAreaSequia">¿Cuánta área está en sequía?</a>
+            </li>
+            <li>
+              <a href="#tab-6870-7" data-toggle="tab" data-value="comparacionSequias">Comparación de sequías entre dos períodos</a>
+            </li>
+            <li>
+              <a href="#tab-6870-8" data-toggle="tab" data-value="evolucionSequias">Evolución de sequías entre dos períodos</a>
+            </li>
+          </ul>
+          <div class="tab-content" data-tabsetid="6870">
+            <div class="tab-pane active" data-value="haceCuantoQueNoLlueve" id="tab-6870-1">
+              <br/>
+              <div class="que-estoy-viendo">
+                <button id="queEstoyViendoHaceCuantoQueNoLlueve" type="button" class="btn btn-default action-button">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+                  ¿Qué estoy viendo?
+                </button>
+              </div>
+              <br/>
+              <div class="shiny-spinner-output-container">
+                <div class="load-container load5">
+                  <div id="spinner-6b8d2eb81d9736609309420359a73c1a" class="loader">Loading...</div>
+                </div>
+                <div id="mapaDiasSecos" style="width:100%; height:700px; " class="leaflet html-widget html-widget-output"></div>
+              </div>
+            </div>
+            <div class="tab-pane" data-value="estacionesEnSequia" id="tab-6870-2">
+              <br/>
+              <div class="que-estoy-viendo">
+                <button id="queEstoyViendoEstacionesEnSequia" type="button" class="btn btn-default action-button">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+                  ¿Qué estoy viendo?
+                </button>
+              </div>
+              <br/>
+              <div class="shiny-spinner-output-container">
+                <div class="load-container load5">
+                  <div id="spinner-a31273591a93385d65c9a9bd93767188" class="loader">Loading...</div>
+                </div>
+                <div id="mapaEstacionesSequia" style="width:100%; height:700px; " class="leaflet html-widget html-widget-output"></div>
+              </div>
+            </div>
+            <div class="tab-pane" data-value="estacionesEnHumedad" id="tab-6870-3">
+              <br/>
+              <div class="que-estoy-viendo">
+                <button id="queEstoyViendoEstacionesEnHumedad" type="button" class="btn btn-default action-button">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+                  ¿Qué estoy viendo?
+                </button>
+              </div>
+              <br/>
+              <div class="shiny-spinner-output-container">
+                <div class="load-container load5">
+                  <div id="spinner-064d509f23a68b315280e72d8ff775ce" class="loader">Loading...</div>
+                </div>
+                <div id="mapaEstacionesHumedad" style="width:100%; height:700px; " class="leaflet html-widget html-widget-output"></div>
+              </div>
+            </div>
+            <div class="tab-pane" data-value="zonasEnSequia" id="tab-6870-4">
+              <br/>
+              <div class="que-estoy-viendo">
+                <button id="queEstoyViendoZonasEnSequia" type="button" class="btn btn-default action-button">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+                  ¿Qué estoy viendo?
+                </button>
+              </div>
+              <br/>
+              <div class="shiny-spinner-output-container">
+                <div class="load-container load5">
+                  <div id="spinner-f5ab7261c6764543269204f61632ec56" class="loader">Loading...</div>
+                </div>
+                <div id="mapaZonasSequia" style="width:100%; height:700px; " class="leaflet html-widget html-widget-output"></div>
+              </div>
+            </div>
+            <div class="tab-pane" data-value="zonasHumedad" id="tab-6870-5">
+              <br/>
+              <div class="que-estoy-viendo">
+                <button id="queEstoyViendoZonasHumedad" type="button" class="btn btn-default action-button">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+                  ¿Qué estoy viendo?
+                </button>
+              </div>
+              <br/>
+              <div class="shiny-spinner-output-container">
+                <div class="load-container load5">
+                  <div id="spinner-124996748e79404c1472c08993cd7a25" class="loader">Loading...</div>
+                </div>
+                <div id="mapaZonasHumedad" style="width:100%; height:700px; " class="leaflet html-widget html-widget-output"></div>
+              </div>
+            </div>
+            <div class="tab-pane" data-value="proporcionAreaSequia" id="tab-6870-6">
+              <br/>
+              <div class="que-estoy-viendo">
+                <button id="queEstoyViendoAreaEnSequia" type="button" class="btn btn-default action-button">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+                  ¿Qué estoy viendo?
+                </button>
+              </div>
+              <br/>
+              <h4 id="sinDatosProporcion" class="shinyjs-hide">Esta región no está cubierta por el producto CHIRPS</h4>
+              <div class="shiny-spinner-output-container">
+                <div class="load-container load5">
+                  <div id="spinner-e441b723db70d693419142acc917e9f5" class="loader">Loading...</div>
+                </div>
+                <div id="graficoProporcionAreaSequia" style="width:100%; height:600px; " class="highchart html-widget html-widget-output"></div>
+              </div>
+            </div>
+            <div class="tab-pane" data-value="comparacionSequias" id="tab-6870-7">
+              <br/>
+              <div class="que-estoy-viendo">
+                <button id="queEstoyViendoComparacionSequias" type="button" class="btn btn-default action-button">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+                  ¿Qué estoy viendo?
+                </button>
+              </div>
+              <br/>
+              <div class="shiny-spinner-output-container">
+                <div class="load-container load5">
+                  <div id="spinner-08e8cfa568491707be2cf936d8720aae" class="loader">Loading...</div>
+                </div>
+                <div id="mapaEvolucionSequia" style="width:100%; height:700px; " class="leaflet html-widget html-widget-output"></div>
+              </div>
+            </div>
+            <div class="tab-pane" data-value="evolucionSequias" id="tab-6870-8">
+              <br/>
+              <div class="que-estoy-viendo">
+                <button id="queEstoyViendoEvolucionSequias" type="button" class="btn btn-default action-button">
+                  <i class="glyphicon glyphicon-info-sign"></i>
+                  ¿Qué estoy viendo?
+                </button>
+              </div>
+              <br/>
+              <div class="shiny-spinner-output-container">
+                <div class="load-container load5">
+                  <div id="spinner-45731a0aee25795a70e37170cbd62fa0" class="loader">Loading...</div>
+                </div>
+                <div id="mapaEvolucionSequiaDiferencia" style="width:100%; height:700px; " class="leaflet html-widget html-widget-output"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+</iframe>
+
